@@ -16,8 +16,8 @@ class App extends Component {
     filter: '',
   };
 
-  formSubmitHandler = data => {
-    const { name, number } = data;
+  formSubmitHandler = values => {
+    const { name, number } = values;
     const { contacts } = this.state;
 
     if (contacts.some(el => el.name === name)) {
@@ -68,10 +68,7 @@ class App extends Component {
     return (
       <div className={css.container}>
         <h1 className={css.title}>Phonebook</h1>
-        <ContactForm
-          clasName={css.contact__form}
-          onSubmit={this.formSubmitHandler}
-        />
+        <ContactForm onSubmit={this.formSubmitHandler} />
 
         <h2 className={css.title__contacts}>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />

@@ -21,7 +21,6 @@ const Filter = ({ value, onChange }) => {
     </form>
   );
 };
-
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
